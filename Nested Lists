@@ -1,0 +1,18 @@
+if __name__ == '__main__':
+    li=[]
+    mini=99999999
+    mini1=99999999
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        li.append([name,score])
+    for i,j in li:
+        if mini>j:
+            mini=j
+    for i,j in li:
+        if mini1>j and j!=mini:
+            mini1=j
+    li.sort()
+    for i,j in li:
+        if j==mini1:
+            print(i)
