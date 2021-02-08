@@ -1,0 +1,25 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+def Rectangle(num):
+    print(f'{num[0]*num[1]:.2f}')
+
+def Circle(num):
+    print(f'{math.pi*num[0]*num[0]:.2f}')
+
+if __name__ == '__main__':  
+    N=int(input())
+    for i in range(N):
+        query_name,*line=input().split()
+        number=list(map(int,line))
+        if query_name == "rectangle":
+            Rectangle(number)
+        if query_name == "circle":
+            Circle(number)
+        
