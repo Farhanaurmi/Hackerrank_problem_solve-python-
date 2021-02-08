@@ -1,0 +1,20 @@
+if __name__ == '__main__':
+    N=int(input())
+    li=[]
+    for _ in range(N):
+        name,*line=input().split() #take input,split them from the left side into 2 part and store the left side in name vari.rest of data pointed to the *line
+        num=list(map(int,line))   #because of line pointer the data stored in the num vari and coverted into list because of map and list function.
+        if name == "insert":      #name="insert"
+            li.insert(num[0],num[1]) #num=[0,5]
+        if name == "print":      #name="print"
+            print(li)
+        if name == "remove":     #name="Remove" 
+            li.remove(num[0])    #num=[6]
+        if name == "append":     #name="append"
+            li.append(num[0])    #num=[9]
+        if name == "pop":
+            li.pop()
+        if name == "sort":
+            li.sort()
+        if name == "reverse":
+            li.reverse()
