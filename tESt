@@ -1,0 +1,16 @@
+def r(a):
+    for i in a:
+        new=""
+        for j in i:
+            if j.isupper()==True:
+                k=j.lower()
+                new=new+k
+            if j.islower()==True:
+                k=j.upper()
+                new=new+k
+        print(new,end=" ")
+    print('\n')
+if __name__ == '__main__':
+    a=list(input().split())
+    a.reverse()
+    r(a)
