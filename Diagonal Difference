@@ -1,0 +1,45 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def diagonalDifference(arr):
+    s=0
+    s2=0
+    count=len(arr)-1
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            if i==j:
+                s=s+arr[i][j]
+        
+        for j in reversed(range(len(arr))):
+            if j==count:
+                s2=s2+arr[i][j]
+
+        count-=1
+    su=s2-s
+    if su<0:
+        su=-1*su
+    
+    return su
+            
+            
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    arr = []
+
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    result = diagonalDifference(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
